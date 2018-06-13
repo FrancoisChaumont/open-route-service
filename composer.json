@@ -1,0 +1,19 @@
+{
+    "name": "francoischaumont/open-route-service",
+    "description": "Interface with some functionalities of the API",
+    "authors": [
+        {
+            "name": "Francois Chaumont",
+            "email": "funcois@outlook.com",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "FC\\": "src/"
+        }
+    }
+}

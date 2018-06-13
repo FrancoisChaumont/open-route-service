@@ -1,6 +1,12 @@
 <?php
 
-require __DIR__."/../src/OpenRouteService.php";
+namespace FC;
+
+use FC\OpenRouteService;
+use FC\Coordinates;
+use FC\Address;
+
+require __DIR__."/../vendor/autoload.php";
 
 $sTxtForLogs = '';
 $response = '';
