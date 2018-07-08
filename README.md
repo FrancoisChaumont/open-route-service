@@ -1,4 +1,11 @@
 # Open Route Service - interface with some functionalities of the API
+
+![GitHub release](https://img.shields.io/github/release/FrancoisChaumont/openrouteservice.svg)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FrancoisChaumont/openrouteservice/issues)
+[![GitHub issues](https://img.shields.io/github/issues/FrancoisChaumont/openrouteservice.svg)](https://github.com/FrancoisChaumont/openrouteservice/issues)
+[![GitHub stars](https://img.shields.io/github/stars/FrancoisChaumont/openrouteservice.svg)](https://github.com/FrancoisChaumont/openrouteservice/stargazers)
+![Github All Releases](https://img.shields.io/github/downloads/FrancoisChaumont/openrouteservice/total.svg)
+
 PHP library to geocode addresses and compute distances using the Open Route Service API.
 
 ## Getting started
