@@ -1,6 +1,6 @@
 <?php
 
-namespace FC;
+namespace FC\OpenRouteService;
 
 /**
  * class to communicate with the Open Route Service API

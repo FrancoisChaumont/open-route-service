@@ -1,10 +1,6 @@
 <?php
 
-namespace FC;
-
-use FC\OpenRouteService;
-use FC\Coordinates;
-use FC\Address;
+namespace FC\OpenRouteService;
 
 require __DIR__."/../vendor/autoload.php";
 

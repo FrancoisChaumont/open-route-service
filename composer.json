@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "FC\\": "src/"
+            "FC\\OpenRouteService\\": "src/"
         }
     }
 }
