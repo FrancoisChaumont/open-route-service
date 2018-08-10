@@ -35,7 +35,7 @@ Install this package with composer by simply adding the following to your compos
 ```
 and running the following command:  
 ```
-composer require francoischaumont/open-route-service
+composer require francoischaumont/open-route-service:2.*
 ```
 
 Requires a file named [api.key](api.key) which contains the API key in order to run.
