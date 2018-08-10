@@ -21,6 +21,8 @@ Open Route Service API 4.5.1+
 
 Before being able to use the API, consequently this library as well, you need to create an account with Open Route Service and request an API key. Please visit their official website in order to do so: https://open-route-service.org
 
+Check out the plan page as well to aknowledge the limitations: https://openrouteservice.org/plans
+
 ### Installation
 Install this package with composer by simply adding the following to your composer.json file:  
 ```
