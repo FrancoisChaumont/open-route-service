@@ -1,4 +1,4 @@
-# Open Route Service - Interface for the Open Route Service API
+# Open Route Service - Interface for the ORS API
 
 ATTENTION! This v2 so far only includes the geocoding. See v1 for distance computation.
 
