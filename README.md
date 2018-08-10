@@ -1,6 +1,8 @@
 # Open Route Service - Interface for the ORS API
 
-ATTENTION! This v2 so far only includes the geocoding. See v1 for distance computation.
+**ATTENTION!** This v2 so far only includes the geocoding. See v1 for distance computation.
+
+
 
 ![GitHub release](https://img.shields.io/github/release/FrancoisChaumont/open-route-service.svg)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FrancoisChaumont/open-route-service/issues)
