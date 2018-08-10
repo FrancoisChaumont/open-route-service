@@ -1,6 +1,6 @@
 {
     "name": "francoischaumont/open-route-service",
-    "description": "Interface with some functionalities of the API",
+    "description": "Interface for some functionalities of the Open Route Service API",
     "authors": [
         {
             "name": "Francois Chaumont",
