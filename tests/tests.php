@@ -18,7 +18,7 @@ if ($apiKey == '') {
 $address = "Chicago, USA";
 
 // instantiate new object with the API key
-$cOrs = new OpenRouteService($apiKey);
+$cOrs = new ORS($apiKey);
 
 // geocode the address
 $coordinates = $cOrs->geocode($address, $txtForLogs);

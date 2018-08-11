@@ -5,7 +5,7 @@ namespace FC\OpenRouteService;
 /**
  * class to communicate with the Open Route Service API
  */
-class OpenRouteService {
+class ORS {
 
     private $apiKey;
     
