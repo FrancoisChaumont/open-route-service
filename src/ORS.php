@@ -22,10 +22,10 @@ class ORS {
      * Geocode a given address
      *
      * @param string $address address to geocode (whole or partial address)
-     * @param string $response API request response
+     * @param string $error API request error response
      * @return mixed on success returns a Coordinates object
      */
-    public function geocode(string $address, string &$response) {
+    public function geocode(string $address, string &$error) {
 
         // define the API url adding the parameters
         $apiKey = $this->apiKey;
@@ -47,12 +47,19 @@ class ORS {
 
         $json2Obj = json_decode($response, true);
 
-        if ($json2Obj != null && isset($json2Obj['features'])) {
-            $longitude = $json2Obj['features'][0]['geometry']['coordinates'][0];
-            $latitude = $json2Obj['features'][0]['geometry']['coordinates'][1];
-            $coordinates = new Coordinates($longitude, $latitude);
+        if ($json2Obj != null) {
+            if (isset($json2Obj['error'])) {
+                $error = $json2Obj['error'];
+                return null;
+            }
 
-            return $coordinates;
+            if (isset($json2Obj['features'])) {
+                $longitude = $json2Obj['features'][0]['geometry']['coordinates'][0];
+                $latitude = $json2Obj['features'][0]['geometry']['coordinates'][1];
+                $coordinates = new Coordinates($longitude, $latitude);
+
+                return $coordinates;
+            }
         }
 
         return null;

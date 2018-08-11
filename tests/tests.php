@@ -23,7 +23,7 @@ $cOrs = new ORS($apiKey);
 // geocode the address
 $coordinates = $cOrs->geocode($address, $txtForLogs);
 if ($coordinates == null) { 
-    die("Error geocoding address".PHP_EOL.$txtForLogs); 
+    die("Error geocoding address: ".$txtForLogs); 
 }
 
 printf(" Latitude: %s\n Lontitude: %s", $coordinates->latitude, $coordinates->longitude);
