@@ -35,6 +35,7 @@ class ORS
     const DESTINATIONS_ALL = 'all';
 
     const GEOCODE_RESULT_SIZE = 1;
+    const DISTANCE_COORDINATES_SEPARATOR = '|';
     
     /**
      * Instantiate a new object
