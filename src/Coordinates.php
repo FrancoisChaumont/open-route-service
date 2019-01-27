@@ -7,8 +7,8 @@ namespace FC\OpenRouteService;
  */
 class Coordinates {
 
-    public $longitude;
-    public $latitude;
+    private $longitude;
+    private $latitude;
 
     public function getLongitude() { return $this->longitude; }
     public function getLatitude() { return $this->latitude; }
