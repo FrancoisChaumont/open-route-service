@@ -4,7 +4,6 @@ namespace FC\OpenRouteService;
 
 require __DIR__."/../vendor/autoload.php";
 
-$txtForLogs = '';
 $response = '';
 $apiKeyFile = __DIR__ . "/../api.key";
 
@@ -15,16 +14,16 @@ if ($apiKey == '') {
 }
 
 // address (whole or partial)
-$address = "Chicago, USA";
+$address = "3181 N Broadway, Chicago, IL 60657";
 
 // instantiate new object with the API key
 $cOrs = new ORS($apiKey);
 
 // geocode the address
-$coordinates = $cOrs->geocode($address, $txtForLogs);
+$coordinates = $cOrs->geocode($response, $address);
 if ($coordinates == null) { 
-    die("Error geocoding address: ".$txtForLogs); 
+    die("Error geocoding address: " . $response); 
 }
 
-printf(" Latitude: %s\n Lontitude: %s", $coordinates->latitude, $coordinates->longitude);
+printf("Lontitude: %s\nLatitude: %s\n", $coordinates->longitude, $coordinates->latitude);
 

@@ -10,6 +10,9 @@ class Coordinates {
     public $longitude;
     public $latitude;
 
+    public function getLongitude() { return $this->longitude; }
+    public function getLatitude() { return $this->latitude; }
+
     /**
      * Instantiate a new object with latitude and longitude
      *
@@ -17,8 +20,8 @@ class Coordinates {
      * @param string $latitude latitude
      */
     function __construct(string $longitude, string $latitude) {
-        $this->latitude = $latitude;
         $this->longitude = $longitude;
+        $this->latitude = $latitude;
     }
 }
 
