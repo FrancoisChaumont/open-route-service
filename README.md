@@ -1,3 +1,7 @@
+# DEPRECATED
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)  
+**See [v2](https://github.com/FrancoisChaumont/open-route-service/tree/v2) instead.**
+
 # Open Route Service - interface with some functionalities of the API
 PHP library to geocode addresses and compute distances using the Open Route Service API.
 
