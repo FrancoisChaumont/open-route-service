@@ -6,7 +6,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/FrancoisChaumont/open-route-service.svg)](https://github.com/FrancoisChaumont/open-route-service/stargazers)
 ![Github All Releases](https://img.shields.io/github/downloads/FrancoisChaumont/open-route-service/total.svg)
 
-PHP library to geocode addresses using the Open Route Service API.
+PHP package to help geocode addresses and calculate distances using the Open Route Service API.
 
 ## Getting started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -15,7 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 PHP 7.1+  
 Open Route Service API 4.5.1+
 
-Before being able to use the API, consequently this library as well, you need to create an account with Open Route Service and request an API key. Please visit their official website in order to do so: https://open-route-service.org
+Before being able to use the API, consequently this package as well, you need to create an account with Open Route Service and request an API key. Please visit their official website in order to do so: https://open-route-service.org
 
 Check out the plan page as well to aknowledge the limitations: https://openrouteservice.org/plans
 
@@ -34,7 +34,7 @@ and running the following command:
 composer require francoischaumont/open-route-service:2.*
 ```
 
-Requires a file named [api.key](api.key) which contains the API key in order to run.
+Requires a file named [api.key](api.key) at the root which contains the API key in order to run.
 
 ## Testing
 A tests file is provided under the tests folder to give an overall idea how to use this library.
