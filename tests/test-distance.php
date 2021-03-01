@@ -14,10 +14,9 @@ if ($apiKey == '') {
     die("No API key!");
 }
 
-$locations = "-87.644234,41.939932|-87.677394,41.929345";
-
-$sources = '0';
-$destinations = '1';
+$locations = [[-87.644234,41.939932],[-87.677394,41.929345]];
+$sources = [0];
+$destinations = [1];
 $profile = ORS::PROFILE_DRIVING_CAR;
 $units = ORS::UNITS_MILES;
 $optimized = ORS::OPTIMIZED_TRUE;

@@ -99,42 +99,43 @@ class ORS
      * Compute the distance between 2 or more locations (Matrix service GET)
      *
      * @param string $response Contains either false (from curl_exec), an error message (from the API) or the entire curl_exec json response
-     * @param string $locations Pipe separated coordinates (longitude,latitude[|longitude,latitude...])
-     * @param string $sources [use with destinations] Tells which locations should be computed together ("source 0 & source 1" would be: 0,1)
-     * @param string $destinations [use with sources] Tells which locations should be computed together ("destination 0 & destination 1" would be: 0,1)
+     * @param array $locations Pipe separated coordinates (longitude,latitude[|longitude,latitude...])
+     * @param array $sources [use with destinations] Tells which locations should be computed together ("source 0 & source 1" would be: 0,1)
+     * @param array $destinations [use with sources] Tells which locations should be computed together ("destination 0 & destination 1" would be: 0,1)
      * @param string $profile Type of vehicle (constants PROFILE_***)
      * @param string $units Units for the distance to retrieve (constants UNITS_***)
-     * @param string $optimized [Only for vehicles] Use of Dijkstra algorithm (constant OPTIMIZED_FALSE) or any other shortest-path routing (constant OPTIMIZED_TRUE)
      * @return array Array of distances
      */
     public function distance(
         string &$response,
-        string $locations,
-        string $sources = self::SOURCES_ALL,
-        string $destinations = self::DESTINATIONS_ALL,
+        array $locations,
+        array $sources = self::SOURCES_ALL,
+        array $destinations = self::DESTINATIONS_ALL,
         string $profile = self::PROFILE_DRIVING_CAR,
-        string $units = self::UNITS_MILES,
-        string $optimized = self::OPTIMIZED_TRUE): ?array
+        string $units = self::UNITS_MILES): ?array
     {
         $distances = null;
 
-        // define the API url adding the parameters
-        $apiKey = $this->apiKey;
-        $metrics = self::METRICS_DISTANCE;
-        $locations = rawurlencode($locations);
+        $postFields = new \stdClass();
+        $postFields->locations = $locations;
+        $postFields->sources = $sources;
+        $postFields->destinations = $destinations;
+        $postFields->units = $units;
+        $postFields->metrics = [ self::METRICS_DISTANCE ];
 
-        // optimized true only works for vehicles
-        if ($profile != self::PROFILE_DRIVING_CAR && $profile != self::PROFILE_DRIVING_HGV) {
-            $optimized = self::OPTIMIZED_FALSE;
-        }
-
-        $url = "https://api.openrouteservice.org/matrix?api_key=$apiKey&profile=$profile&locations=$locations&sources=$sources&destinations=$destinations&metrics=$metrics&units=mi&optimized=$optimized";
+        $url = "https://api.openrouteservice.org/v2/matrix/$profile";
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_HEADER, FALSE);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json; charset=utf-8"));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            "Accept: application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8",
+            "Authorization: " . $this->apiKey,
+            "Content-Type: application/json; charset=utf-8"
+        ));
+        curl_setopt($ch, CURLOPT_POST, TRUE);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postFields));
         $response = curl_exec($ch);
         curl_close($ch);
 
