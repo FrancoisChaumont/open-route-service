@@ -1,4 +1,4 @@
-# Open Route Service - Interface for the ORS API 6.3+
+# Open Route Service - Interface for the ORS API v6
 
 ![GitHub release](https://img.shields.io/github/release/FrancoisChaumont/open-route-service.svg)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FrancoisChaumont/open-route-service/issues)
