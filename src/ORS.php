@@ -142,17 +142,20 @@ class ORS
         if (!$response) { return null; }
 
         $json2Obj = json_decode($response, true);
-        //var_dump($json2Obj);
         if ($json2Obj != null) {
             if (isset($json2Obj['error'])) {
-                $response = "[" . $json2Obj['error']['code'] . "] " . $json2Obj['error']['message'];
+                if (isset($json2Obj['error']['code'])) {
+                    if (isset($json2Obj['error']['message'])) {
+                        $response = "[" . $json2Obj['error']['code'] . "] " . $json2Obj['error']['message'];
+                    } else {
+                        $response = json_encode($json2Obj['error']);
+                    }
+                } else {
+                    $response = json_encode($json2Obj['error']);
+                }
+                
                 return null;
             }
-            
-            if (isset($json2Obj['distances'])) {
-                $distances = $json2Obj['distances'];
-            }
-        }
 
         return $distances;
     }
